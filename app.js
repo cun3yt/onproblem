@@ -5,6 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var passport = require('passport'),
+  LocalStrategy = require('passport-local').Strategy;
+var models = require('./models');
 
 var app = express();
 
@@ -24,6 +27,25 @@ app.use(session({
   secret: 'something unImporTan! bUt 1t can be, though?!',
   resave: true, saveUninitialized: true
 }));
+
+passport.use(new LocalStrategy(
+  function(username, password, done) {
+    models.User.findOne({ username: username }, function(err, user) {
+      if (err) { return done(err); }
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username.' });
+      }
+      if (!user.authenticate(password)) {
+        return done(null, false, { message: 'Incorrect password.' });
+      }
+      return done(null, user);
+    });
+  }
+));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 // Routes Configuration
 var route_mapping = require('./routes/mapping');
