@@ -1,20 +1,25 @@
-var ORM = require('sequelize');
-var Config = require('../config');
+'use strict';
 
-var sequelize = new ORM();
-
-var Problem = sequelize.define('problem',
-    {
-        slug: {
-            type: ORM.STRING,
-            field: 'slug'
-        },
-        title: {
-            type: ORM.STRING,
-            field: 'title'
-        }
+module.exports = function(sequelize, DataTypes) {
+  var Problem = sequelize.define("Problem", {
+    slug: {
+      type: DataTypes.STRING,
+      field: 'slug'
     },
-    Config.orm
-);
+    title: {
+      type: DataTypes.STRING,
+      field: 'title'
+    },
+    description: {
+      type: DataTypes.STRING,
+      field: 'description'
+    }
+  },
+  {
+    timestamps: false,
+    underscored: true,
+    tableName: 'problems'
+  });
 
-module.exports = Problem;
+  return Problem;
+};

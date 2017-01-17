@@ -1,9 +1,23 @@
+var models = require('../models');
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+
+  var debug = require('debug')('onproblem:server');
+  debug(models);
+
+  models.Problem.findAll().then(function(problems){
+
+    debug('hello');
+    debug(models);
+    debug(problems);
+
+    res.render('index', {
+      title: 'OnProblem',
+      problems: problems
+    });
+  });
 });
 
 module.exports = router;

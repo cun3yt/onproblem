@@ -17,5 +17,20 @@
         You discuss problems, suggest approaches and solutions, see other proposed solutions, and the best part:
         participate to solve the problem. Don't forget a better world is possible with your help.
     </p>
+    <p>
+        Here are the problems:
+        <ol>
+            <% problems.forEach(function(problem) { %>
+                <li>
+                    <div>
+                        <%= problem.slug %> : <%= problem.title %>
+                    </div>
+                    <div style="background-color: greenyellow;">
+                        <%= problem.description %>
+                    </div>
+                </li>
+            <% }); %>
+        </ol>
+    </p>
   </body>
 </html>
