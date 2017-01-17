@@ -5,8 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
 
 var app = express();
 
@@ -23,8 +21,11 @@ app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+// Routes Configuration
+var route_mapping = require('./routes/mapping');
+for(var _route in route_mapping) {
+  app.use(_route, route_mapping[_route]);
+}
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
