@@ -45,7 +45,9 @@ router.post('/', function(req, res, next) {
       });
     },
     error: function(form) {
-      res.send('Error: something went wrong!');
+      res.render('join/signup.ejs', {
+        form: form
+      });
     },
     empty: function(form) {
       res.send('Empty: something went wrong!');
