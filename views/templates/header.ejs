@@ -3,9 +3,6 @@
         <i class="compass icon big"></i>
         <%=appGlobals.name%>
     </div>
-    <a class="item">
-        Messages
-    </a>
 
     <div class="right menu">
         <% if(!user) { %>
@@ -13,9 +10,9 @@
                 <a href="/signup" class="ui primary button">Join</a>
             </div>
         <% } else { %>
-            <div class="item">
+            <a class="item">
                 <i class="bell icon large"></i>
-            </div>
+            </a>
             <div class="item">
                 <%=user.email%>
             </div>
