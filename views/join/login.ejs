@@ -4,20 +4,23 @@
     <div class="column">
         <h2 class="ui teal header">Login</h2>
 
+        <% if(message.length > 0) { %>
+            <p>
+                <%= message %>
+            </p>
+        <% } %>
+
         <form class="ui large form" action="/login" method="post">
             <div class="ui stacked segment">
+                <%- form.toHTML() %>
                 <div>
-                    <label>Email:</label>
-                    <input type="text" name="email"/>
-                </div>
-                <div>
-                    <label>Password:</label>
-                    <input type="password" name="password"/>
-                </div>
-                <div>
-                    <input type="submit" value="Log In"/>
+                    <input type="submit" value="Log In" class="ui primary button" />
                 </div>
             </div>
         </form>
+
+        <div class="dont-have-account-question">
+            Don't have an account? <a href="/signup">Sign up now</a>
+        </div>
     </div>
 </div>

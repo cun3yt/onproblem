@@ -67,7 +67,7 @@ module.exports = function(passport) {
         User.findOne({email: emailAddress}).then(
           function (user) {
             if (!user || !user.authenticate(password)) {
-              return done(null, false, {message: 'Incorrect username or password.'});
+              return done(null, false, req.flash('loginMessage', 'Incorrect username or password.'));
             }
             return done(null, user);
           }
