@@ -2,3 +2,4 @@
 onproblem.iml
 node_modules
 /public/stylesheets/*.css
+.DS_Store
