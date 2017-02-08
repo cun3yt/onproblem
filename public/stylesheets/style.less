@@ -1,8 +1,56 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@media (min-height: 320px) {
+  .ui.footer { /* Increased specificity for SO snippet priority */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
 }
 
-a {
-  color: #00B7FF;
+body {
+  & > .grid {
+    height: 100%;
+  }
+}
+.image {
+  margin-top: -100px;
+}
+.column {
+  max-width: 450px;
+}
+
+div.home-banner {
+  height: 360px;
+  width: 100%;
+  display: block;
+  position: relative;
+
+  &::after {
+    content: "";
+    background: center no-repeat url("/images/banner_640x480.jpg");
+    background-size: contain;
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .desc {
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+  }
+}
+
+.content {
+  margin: 0 20px;
+
+  .home-discover-more {
+    margin-left: 40px;
+  }
 }

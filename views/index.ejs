@@ -1,36 +1,29 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>"On Problem" is the platform for people like you to discuss solutions to the biggest problems in the world</p>
-    <p>Some problems</p>
-    <ol>
-        <li>Global Warming & Climate Change</li>
-        <li>Poverty & Access to Clean Water and Food</li>
-        <li>Energy Crisis</li>
-    </ol>
-    <p>
-        You discuss problems, suggest approaches and solutions, see other proposed solutions, and the best part:
-        participate to solve the problem. Don't forget a better world is possible with your help.
-    </p>
-    <p>
-        Here are the problems:
-        <ol>
-            <% problems.forEach(function(problem) { %>
-                <li>
-                    <div>
-                        <%= problem.slug %> : <%= problem.title %>
-                    </div>
-                    <div style="background-color: greenyellow;">
-                        <%= problem.description %>
-                    </div>
-                </li>
-            <% }); %>
-        </ol>
-    </p>
-  </body>
-</html>
+<% layout('layouts/_main_layout') -%>
+
+<div class="home-banner">
+    <div class="desc">
+        <h1><i class="compass icon large"></i><%= title %></h1>
+        <h3>Collaborating on World's Biggest Problems</h3>
+        <a class="ui primary button">Join Now</a>
+    </div>
+</div>
+
+<div class="content">
+    <h3>Some of the Critical Problems</h3>
+
+    <div class="ui middle aligned selection list">
+        <% problems.forEach(function(problem) { %>
+            <div class="item">
+                <i class="cloud icon large"></i>
+                <div class="content">
+                    <div class="header"><%= problem.title %></div>
+                    <%= problem.description %>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+    <div class="home-discover-more">
+        <a href="/discover" class="ui primary basic button">Discover More</a>
+    </div>
+</div>
