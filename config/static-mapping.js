@@ -15,6 +15,6 @@ module.exports = function(app) {
   ));
 
   // uncomment after placing your favicon in /public
-  // var favicon = require('serve-favicon');
-  // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+  var favicon = require('serve-favicon');
+  app.use(favicon(path.join(applicationRoot, 'public/images', 'fav.ico')));
 };
