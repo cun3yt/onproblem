@@ -1,3 +1,4 @@
 .idea
 onproblem.iml
 node_modules
+/public/stylesheets/*.css
