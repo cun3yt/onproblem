@@ -4,6 +4,9 @@ var app = express();
 // View Engine Setup
 require('./config/view')(app);
 
+// Application Globals, e.g. meta properties
+require('./config/globals')(app);
+
 // Parser & Logger Setup
 require('./config/request-parser')(app);
 
