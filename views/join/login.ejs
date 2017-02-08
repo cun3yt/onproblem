@@ -1,15 +1,23 @@
-<h3>Login</h3>
+<% layout('layouts/_main_layout') -%>
 
-<form action="/login" method="post">
-    <div>
-        <label>Username:</label>
-        <input type="text" name="username"/>
+<div class="ui middle aligned center aligned grid">
+    <div class="column">
+        <h2 class="ui teal header">Login</h2>
+
+        <form class="ui large form" action="/login" method="post">
+            <div class="ui stacked segment">
+                <div>
+                    <label>Email:</label>
+                    <input type="text" name="email"/>
+                </div>
+                <div>
+                    <label>Password:</label>
+                    <input type="password" name="password"/>
+                </div>
+                <div>
+                    <input type="submit" value="Log In"/>
+                </div>
+            </div>
+        </form>
     </div>
-    <div>
-        <label>Password:</label>
-        <input type="password" name="password"/>
-    </div>
-    <div>
-        <input type="submit" value="Log In"/>
-    </div>
-</form>
+</div>

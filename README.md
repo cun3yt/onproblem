@@ -9,5 +9,7 @@ problems.
 git checkout <repository URI>
 npm install
 node_modules/.bin/sequelize init
+cd sematic/
+../node_modules/gulp/bin/gulp.js build
 ```
 
