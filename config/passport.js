@@ -3,7 +3,7 @@
 var LocalStrategy = require('passport-local').Strategy;
 var User = require('../models').User;
 
-module.exports = function(passport, debug) {
+module.exports = function(passport) {
 
   // ==================================
   // Session (de)serializer ===========

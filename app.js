@@ -7,8 +7,6 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var flash = require('connect-flash');
 
-var debug = require('debug')('onproblem:server');
-
 var app = express();
 
 // view engine setup
@@ -27,7 +25,7 @@ app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 
 // Static Settings
-require('./config/static-mapping')(app, debug);
+require('./config/static-mapping')(app);
 
 app.use(session({
   secret: 'something unImporTan! bUt 1t can be, though?!',
@@ -35,8 +33,8 @@ app.use(session({
 }));
 
 // Authentication Setup
-var passport = require('passport', debug);
-require('./config/passport')(passport, debug);
+var passport = require('passport');
+require('./config/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 

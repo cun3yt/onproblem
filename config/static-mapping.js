@@ -1,4 +1,4 @@
-module.exports = function(app, debug) {
+module.exports = function(app) {
   var express = require('express');
   var path = require('path');
 
