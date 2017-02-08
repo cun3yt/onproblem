@@ -1,6 +1,6 @@
 var user_middleware = require('../../helpers/user_middleware')();
 
-module.exports = function(controllerRouteURI, app, passport, debug) {
+module.exports = function(controllerRouteURI, app, passport) {
   var subRouter = require('express').Router();
 
   subRouter.get('/', user_middleware.isLoggedOut, function(req, res) {
