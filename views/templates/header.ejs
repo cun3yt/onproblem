@@ -1,16 +1,24 @@
 <div class="op-header ui large menu">
     <div class="item">
         <i class="compass icon big"></i>
-        On Problem
+        <%=appGlobals.name%>
     </div>
     <a class="item">
         Messages
     </a>
+
     <div class="right menu">
-        <div class="item">
-            <a href="/signup" class="ui primary button">Join</a>
-        </div>
+        <% if(!user) { %>
+            <div class="item">
+                <a href="/signup" class="ui primary button">Join</a>
+            </div>
+        <% } else { %>
+            <div class="item">
+                <i class="bell icon large"></i>
+            </div>
+            <div class="item">
+                <%=user.email%>
+            </div>
+        <% } %>
     </div>
 </div>
-
-<!-- @todo: Logged In/Out Configuration is needed -->
