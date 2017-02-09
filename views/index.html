@@ -1,0 +1,33 @@
+{% extends "layouts/_main_layout.html" %}
+
+{% block body %}
+
+<div class="home-banner">
+    <div class="desc">
+        <h1><i class="compass icon large"></i>{{ title }}</h1>
+        <h3>Collaborating on World's Biggest Problems</h3>
+        <a href="/signup" class="ui primary button">Join Now</a>
+    </div>
+</div>
+
+<div class="content">
+    <h3>Some of the Critical Problems</h3>
+
+    <div class="ui middle aligned selection list">
+        {% for problem in problems %}
+        <a class="item" href="{{ problem.create_link() }}">
+            <i class="cloud icon large"></i>
+            <div class="content">
+                <div class="header">{{ problem.title }}</div>
+                {{ problem.description }}
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+
+    <div class="home-discover-more">
+        <a href="/discover" class="ui primary basic button">Discover More</a>
+    </div>
+</div>
+{% endblock %}
+

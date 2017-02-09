@@ -1,18 +1,20 @@
-<% layout('layouts/_main_layout') -%>
+{% extends "layouts/_main_layout.html" %}
+
+{% block body %}
 
 <div class="ui middle aligned center aligned grid">
     <div class="column">
         <h2 class="ui teal header">Login</h2>
 
-        <% if(message.length > 0) { %>
+        {% if message.length > 0 %}
             <p>
-                <%= message %>
+                {{ message }}
             </p>
-        <% } %>
+        {% endif %}
 
         <form class="ui large form" action="/login" method="post">
             <div class="ui stacked segment">
-                <%- form.toHTML() %>
+                {{ form.toHTML() | safe }}
                 <div>
                     <input type="submit" value="Log In" class="ui primary button" />
                 </div>
@@ -24,3 +26,5 @@
         </div>
     </div>
 </div>
+
+{% endblock %}

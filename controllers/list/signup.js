@@ -6,7 +6,7 @@ module.exports = function(controllerRouteURI, app, passport) {
   subRouter.get('/', user_middleware.isLoggedOut, function(req, res) {
     var form = signup_form();
 
-    res.render('join/signup.ejs', {
+    res.render('join/signup', {
       form: form,
       message: req.flash('signupMessage')
     });
