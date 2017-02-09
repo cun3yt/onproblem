@@ -1,10 +1,13 @@
 module.exports = function(app) {
-  var engine = require('ejs-mate'),
+  var engine = require('nunjucks'),
     flash = require('connect-flash'),
     path = require('path');
 
-  app.engine('ejs', engine);
-  app.set('views', path.join(__dirname, '..', 'views'));
-  app.set('view engine', 'ejs');
+  engine.configure(path.join(__dirname, '..', 'views'), {
+    autoescape: true,
+    express: app
+  });
+
+  app.set('view engine', 'html');
   app.use(flash());
 };

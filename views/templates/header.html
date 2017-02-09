@@ -1,21 +1,21 @@
 <div class="op-header ui large menu">
     <div class="item">
         <i class="compass icon big"></i>
-        <%=appGlobals.name%>
+        {{ appGlobals.name }}
     </div>
 
     <div class="right menu">
-        <% if(!user) { %>
+        {% if not user %}
             <div class="item">
                 <a href="/signup" class="ui primary button">Join</a>
             </div>
-        <% } else { %>
+        {% else %}
             <a class="item">
                 <i class="bell icon large"></i>
             </a>
             <div class="item">
-                <%=user.email%>
+                {{ user.email }}
             </div>
-        <% } %>
+        {% endif %}
     </div>
 </div>
