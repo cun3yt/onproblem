@@ -18,7 +18,24 @@ module.exports = function(sequelize, DataTypes) {
   {
     timestamps: false,
     underscored: true,
-    tableName: 'problems'
+    tableName: 'problems',
+    classMethods: {
+      associate: function(models) {
+        Problem.hasMany(models.FirstLevelComment,
+          { as: {
+              singular: 'comment',
+              plural: 'comments'
+            }
+          }
+        );
+      }
+    },
+    instanceMethods: {
+      create_link: function() {
+        var path = require('path');
+        return path.join('/problem', this.slug);
+      }
+    }
   });
 
   return Problem;

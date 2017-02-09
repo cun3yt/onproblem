@@ -13,13 +13,13 @@
 
     <div class="ui middle aligned selection list">
         <% problems.forEach(function(problem) { %>
-            <div class="item">
+            <a class="item" href="<%=problem.create_link()%>">
                 <i class="cloud icon large"></i>
                 <div class="content">
                     <div class="header"><%= problem.title %></div>
                     <%= problem.description %>
                 </div>
-            </div>
+            </a>
         <% }); %>
     </div>
 

@@ -7,4 +7,29 @@
     <div>
         <%= problem.description %>
     </div>
+
+    <h4 class="ui horizontal divider header">
+        <i class="comments outline icon"></i>
+        Discussion
+    </h4>
+
+    <% if(comments.length == 0) { %>
+        <div class="ui message">
+            <div class="header">
+                No Comments Yet
+            </div>
+            <p>Be first to comment on this problem</p>
+        </div>
+    <% } else { %>
+        <% comments.forEach(function(comment) { %>
+            <div class="ui segment" id="comment-<%=comment.uuid%>">
+                <p><%= comment.comment %></p>
+                <p>Direct Link: <%= comment.uuid %></p>
+            </div>
+        <% }); %>
+    <% } %>
+
+    <!--<div>-->
+        <!--Comment insertion will be here..-->
+    <!--</div>-->
 </div>

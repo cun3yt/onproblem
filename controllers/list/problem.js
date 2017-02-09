@@ -14,10 +14,14 @@ module.exports = function(controllerRouteURI, app) {
         res.redirect('/');
       }
 
-      res.render('problem', {
-        problem: problem
-        // discussion: discussion
-      });
+      problem.getComments().then(
+        function(comments){
+          res.render('problem', {
+            problem: problem,
+            comments: comments
+          });
+        }
+      );
 
     });
   });
