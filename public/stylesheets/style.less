@@ -1,63 +1,93 @@
-@media (min-height: 320px) {
-  .ui.footer { /* Increased specificity for SO snippet priority */
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
-}
-
-body {
-  & > .grid {
-    height: 100%;
-  }
-}
-.image {
-  margin-top: -100px;
-}
-.column {
-  max-width: 450px;
-}
-
-div.home-banner {
-  height: 360px;
+.c_banner {
+  height: 420px;
   width: 100%;
   display: block;
   position: relative;
-  background-color: rgba(0, 0, 255, 0.1);
-  margin-top: -14px;
-  margin-bottom: 15px;
-
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 35px;
+  padding-top: 15px;
+  color:#fff;
   &::after {
     content: "";
-    background: center no-repeat url("/images/banner_640x480.jpg");
-    background-size: contain;
-    opacity: 0.6;
+    background: center no-repeat url("/images/banner.jpg");
+    background-size: cover;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+    width:100%;
+    height:100%;
     position: absolute;
     z-index: -1;
   }
-
-  .desc {
-    margin: auto;
-    width: 50%;
-    height: 50%;
-    text-align: center;
-    position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
+  .c_banner__title{
+    font-size: 3em;
+    font-weight: 100;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.39);
+  }
+  .c_banner__sub-title{
+    font-size: 1.8em;
+    font-weight: 100;
+    margin: 10px 0 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.39);
   }
 }
-
-.content {
-  margin: 0 20px;
-
-  .home-discover-more {
-    margin-left: 40px;
-  }
+.c_banner__desc {
+  position: relative;
+  margin: auto;
+  text-align: center;
+  top: ~'calc(50% - 50px)'; left: 0; bottom: 0; right: 0;
+  transform: translateY(-50%);
 }
 
 .already-signed-up-question, .dont-have-account-question {
   margin-top: 10px;
+}
+.tac{
+  text-align: center;
+}
+.problem-item__date{
+  font-size: 12px;
+  opacity: .5;
+  &:before{
+    font-size: 5px;
+    font-family: Icons;
+    content:"\f111";
+    position: relative;
+    bottom: 1px;
+    margin: 0 5px;
+  }
+}
+.problem-item__user{
+  color:rgba(0,0,0,.6);
+  font-size: 12px;
+}
+.problem-item__label{
+  float: right;
+}
+.problem-item__percent{
+  min-width: 60px;
+  max-width: 60px;
+  margin: 0 0 0 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.c_sidebar__hot-topics{
+  margin-bottom: 20px;
+  .header{
+    color:rgba(0,0,0,.6) !important;
+  }
+  .description{
+    font-size: 12px;
+    opacity: .5;
+  }
+}
+.c_footer{
+  margin: 20px 0 0 0 !important;
+}
+.c_footer__copyright{
+  float: right;
 }

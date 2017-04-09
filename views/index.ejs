@@ -1,29 +1,76 @@
 <% layout('layouts/_main_layout') -%>
-
-<div class="home-banner">
-    <div class="desc">
-        <h1><i class="compass icon large"></i><%= title %></h1>
-        <h3>Collaborating on World's Biggest Problems</h3>
-        <a href="/signup" class="ui primary button">Join Now</a>
-    </div>
-</div>
-
-<div class="content">
-    <h3>Some of the Critical Problems</h3>
-
-    <div class="ui middle aligned selection list">
-        <% problems.forEach(function(problem) { %>
-            <div class="item">
-                <i class="cloud icon large"></i>
-                <div class="content">
-                    <div class="header"><%= problem.title %></div>
-                    <%= problem.description %>
+<div class="ui container">
+    <div class="ui stackable grid">
+        <div class="twelve wide column">
+            <div class="ui middle aligned selection list">
+                <% problems.forEach(function(problem) { %>
+                <div class="ui segments">
+                    <div class="ui segment items">
+                        <div class="item">
+                            <div class="image ui tiny">
+                                <img src="https://images.unsplash.com/photo-1483825366482-1265f6ea9bc9?dpr=2&auto=format&fit=crop&w=300&h=300&q=80&cs=tinysrgb&crop=&bg=">
+                            </div>
+                            <div class="content">
+                                <a class="header"><%= problem.title %></a>
+                                <div class="description">
+                                    <%= problem.description %>
+                                </div>
+                            </div>
+                            <div class="problem-item__percent">
+                                <div>80%</div>
+                                <div class="ui tiny progress" data-percent="80%">
+                                    <div class="bar"></div>
+                                    <div class="label">Solvable</div>
+                                </div>
+                            </div>
+                            <div class="problem-item__percent">
+                                <div>55%</div>
+                                <div class="ui tiny progress" data-percent="55">
+                                    <div class="bar"></div>
+                                    <div class="label">Criticality</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui secondary segment">
+                        <div class="right floated author">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jadlimcaco/128.jpg" class="ui avatar image">
+                            <a class="problem-item__user" href="#">Bernard Owens</a>
+                            <span class="problem-item__date">wrote March 21, 17</span>
+                            <a class="problem-item__label ui label">Renevable Energy</a>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+            <div class="tac">
+                <a href="/discover" class="ui primary basic button">Discover More</a>
+            </div>
+        </div>
+        <div class="four wide column c_sidebar">
+            <div class="c_sidebar__hot-topics">
+                <h3>Hot Topics</h3>
+                <div class="ui relaxed list">
+                    <% problems.forEach(function(problem) { %>
+                    <div class="item">
+                        <div class="content">
+                            <a class="header"><%= problem.title %></a>
+                            <div class="description">Augustin Maggio - 10 mins ago</div>
+                        </div>
+                    </div>
+                    <% }); %>
                 </div>
             </div>
-        <% }); %>
-    </div>
-
-    <div class="home-discover-more">
-        <a href="/discover" class="ui primary basic button">Discover More</a>
+            <div class="c_sidebar__tags ui labels">
+                <h3>Tags</h3>
+                <a class="ui label">Hunger</a>
+                <a class="ui label">Renevable Energy</a>
+                <a class="ui label">Global warming</a>
+                <a class="ui label">Inequality</a>
+                <a class="ui label">Civil war</a>
+                <a class="ui label">Facism</a>
+                <a class="ui label">Disease</a>
+            </div>
+        </div>
     </div>
 </div>
