@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="138px" height="29px" viewBox="0 0 138 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43 (38999) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Login" transform="translate(-179.000000, -40.000000)" fill="#526173">
+            <g id="logo" transform="translate(179.000000, 39.000000)">
+                <text id="n-Problem" font-family="Lato-Bold, Lato" font-size="24" font-weight="bold">
+                    <tspan x="29" y="26">n Problem</tspan>
+                </text>
+                <text id="" font-family="FontAwesome" font-size="32" font-weight="normal">
+                    <tspan x="0" y="27"></tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
