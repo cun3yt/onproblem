@@ -1,14 +1,7 @@
-<% layout('layouts/_login_layout') -%>
-<div class="p_login__bg">
-    <video class="p_login__video" autoplay="" loop="">
-        <source src="images/login_video.webm" type="video/webm">
-        <source src="images/login_video.mp4" type="video/mp4">
-
-    </video>
-</div>
-<div class="p_login__form">
+<% layout('layouts/_join_layout') -%>
+<div class="p_join__form">
     <a href="/">
-        <img src="images/logo-white.svg" class="p_login__logo" alt="Onproblem logo" />
+        <img src="images/logo-white.svg" class="p_join__logo" alt="Onproblem logo" />
     </a>
     <% if(message.length > 0) { %>
         <p>
@@ -19,7 +12,7 @@
     <form class="ui large form" action="/login" method="post">
         <div class="ui stacked segment">
             <%- form.toHTML() %>
-            <a class="p_login__forgot-pass" href="#">Forgotten password?</a>
+            <a class="p_join__forgot-pass" href="#">Forgotten password?</a>
             <div>
                 <input type="submit" value="Log In" class="ui fluid primary button" />
             </div>
