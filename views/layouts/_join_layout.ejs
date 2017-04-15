@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../templates/head.ejs %>
+</head>
+<body class="p_join">
+    <div class="p_join__bg">
+        <video class="p_join__video" autoplay="" loop="">
+            <source src="images/login_video.webm" type="video/webm">
+            <source src="images/login_video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <%- body %>
+
+    <% include ../templates/footer.ejs %>
+
+    <% include ../templates/js.ejs %>
+</body>
+</html>

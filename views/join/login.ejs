@@ -1,26 +1,38 @@
-<% layout('layouts/_main_layout') -%>
+<% layout('layouts/_join_layout') -%>
+<div class="p_join__form">
+    <a href="/">
+        <img src="images/logo-white.svg" class="p_join__logo" alt="Onproblem logo" />
+    </a>
+    <% if(message.length > 0) { %>
+        <p>
+            <%= message %>
+        </p>
+    <% } %>
 
-<div class="ui middle aligned center aligned grid">
-    <div class="column">
-        <h2 class="ui teal header">Login</h2>
-
-        <% if(message.length > 0) { %>
-            <p>
-                <%= message %>
-            </p>
-        <% } %>
-
-        <form class="ui large form" action="/login" method="post">
-            <div class="ui stacked segment">
-                <%- form.toHTML() %>
-                <div>
-                    <input type="submit" value="Log In" class="ui primary button" />
-                </div>
+    <form class="ui large form" action="/login" method="post">
+        <div class="ui stacked segment">
+            <%- form.toHTML() %>
+            <a class="p_join__forgot-pass" href="#">Forgotten password?</a>
+            <div>
+                <input type="submit" value="Log In" class="ui fluid primary button" />
             </div>
-        </form>
-
-        <div class="dont-have-account-question">
-            Don't have an account? <a href="/signup">Sign up now</a>
+            <div class="ui horizontal divider">
+                Or
+            </div>
+            <div class="ui two buttons">
+                <button class="ui facebook button">
+                    <i class="facebook icon"></i>
+                    Facebook
+                </button>
+                <button class="ui twitter button">
+                    <i class="twitter icon"></i>
+                    Twitter
+                </button>
+            </div>
         </div>
+    </form>
+
+    <div class="ui stacked segment dont-have-account-question">
+        Don't have an account? <a href="/signup">Register now</a>
     </div>
 </div>
