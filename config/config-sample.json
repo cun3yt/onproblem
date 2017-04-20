@@ -1,8 +1,9 @@
+//change file name as config.json and replace USER NAME and DATABASE NAME with yours
 {
   "development": {
-    "username": "cuneyt",
+    "username": "USERNAME",
     "password": null,
-    "database": "cuneyt",
+    "database": "DATABASE NAME",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
