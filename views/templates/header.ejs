@@ -1,37 +1,30 @@
-<div class="c_banner">
-    <div class="c_header ui container">
-        <div class="ui large menu">
-            <div class="item">
-                <a href="/">
-                    <img src="images/logo-black.svg" class="c_header__logo" alt="<%=appGlobals.name%>" />
-                </a>
-            </div>
-            <div class="right menu">
-                <div class="ui item">
-                    <div class="ui icon input">
-                        <input class="prompt" type="text" placeholder="Search problems...">
-                        <i class="search link icon"></i>
-                    </div>
-                    <div class="results"></div>
-                </div>
-                <% if(!user) { %>
-                <div class="item">
-                    <a href="/signup" class="ui primary button">Join</a>
-                </div>
-                <% } else { %>
-                <a class="item">
-                    <i class="bell icon large"></i>
-                </a>
-                <div class="item">
-                    <%=user.email%>
-                </div>
-                <% } %>
-            </div>
+<div class="c_header ui container">
+    <div class="ui large menu">
+        <div class="item">
+            <a href="/">
+                <img src="images/logo-black.svg" class="c_header__logo" alt="<%=appGlobals.name%>" />
+            </a>
         </div>
-    </div>
-    <div class="c_banner__desc">
-        <h1 class="c_banner__title">The Strength of a <b>People</b>.</h1>
-        <h3 class="c_banner__sub-title">The Power of Community.</h3>
-        <a href="/signup" class="ui primary button">Join Us</a>
+        <div class="right menu">
+            <div class="ui item">
+                <div class="ui icon input">
+                    <input class="prompt" type="text" placeholder="Search problems...">
+                    <i class="search link icon"></i>
+                </div>
+                <div class="results"></div>
+            </div>
+            <% if(!user) { %>
+            <div class="item">
+                <a href="/signup" class="ui primary button">Join</a>
+            </div>
+            <% } else { %>
+            <a class="item">
+                <i class="bell icon large"></i>
+            </a>
+            <div class="item">
+                <%=user.email%>
+            </div>
+            <% } %>
+        </div>
     </div>
 </div>
