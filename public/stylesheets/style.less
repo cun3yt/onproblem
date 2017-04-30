@@ -1,3 +1,6 @@
+.c_header{
+  margin: 15px 0;
+}
 .c_header__logo{
   height: 25px;
   display: block;
@@ -5,12 +8,13 @@
 .c_banner {
   height: 420px;
   width: 100%;
-  display: block;
   position: relative;
   background-color: rgba(0, 0, 0, 0.2);
   margin-bottom: 35px;
-  padding-top: 15px;
   color:#fff;
+  //margin collapsing hack other solutions http://slides.com/hamzaerbay/deck#/1/10
+  display: inline-block;
+  //margin collapsing hack
   &::after {
     content: "";
     background: center no-repeat url("/images/banner.jpg");

@@ -6,4 +6,5 @@ module.exports = function(app, authenticator) {
   require(path.join(dir_path, 'signup'))('/signup', app, authenticator);
   require(path.join(dir_path, 'users'))('/users', app);
   require(path.join(dir_path, 'login'))('/login', app, authenticator);
+  require(path.join(dir_path, 'terms'))('/terms', app);
 };
